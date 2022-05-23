@@ -32,16 +32,16 @@ cd ../spark/spark-tensorflow-connector
 mvn clean install
 ```
 
-To build the library for a different version of TensorFlow, e.g., 1.5.0, use:
+To build the library for a different version of TensorFlow, e.g., 1.4.0, use:
 ```sh
 # Build TensorFlow Hadoop
 cd ../../hadoop
-mvn versions:set -DnewVersion=1.5.0
+mvn versions:set -DnewVersion=1.4.0
 mvn clean install
 
 # Build Spark TensorFlow connector
 cd ../spark/spark-tensorflow-connector
-mvn versions:set -DnewVersion=1.5.0
+mvn versions:set -DnewVersion=1.4.0
 mvn clean install
 ```
 
@@ -298,3 +298,7 @@ frameDf.write.format("tfrecords").option("recordType", "SequenceExample").save("
 val importedDf2: DataFrame = spark.read.format("tfrecords").option("recordType", "SequenceExample").schema(frameSchema).load("youtube-8m-frame.tfrecord")
 importedDf2.show()
 ```
+
+#### others 
+
+- https://stackoverflow.com/questions/63761156/error-with-saving-dataframe-to-tfrecords-in-spark

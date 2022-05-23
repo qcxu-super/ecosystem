@@ -176,15 +176,15 @@ object DefaultSource extends scala.Serializable {
       localPath: String,
       mode: SaveMode): Iterator[Int] = {
     val dir = new File(localPath)
-    if (dir.exists()) {
-      if (mode == SaveMode.ErrorIfExists) {
-        throw new IllegalStateException(
-          s"LocalPath $localPath already exists. SaveMode: ErrorIfExists.")
-      }
-      if (mode == SaveMode.Ignore) {
-        return Iterator.empty
-      }
-    }
+//    if (dir.exists()) {
+//      if (mode == SaveMode.ErrorIfExists) {
+//        throw new IllegalStateException(
+//          s"LocalPath $localPath already exists. SaveMode: ErrorIfExists.")
+//      }
+//      if (mode == SaveMode.Ignore) {
+//        return Iterator.empty
+//      }
+//    }
 
     // Make the directory if it does not exist
     dir.mkdirs()
