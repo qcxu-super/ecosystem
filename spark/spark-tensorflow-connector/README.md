@@ -33,6 +33,7 @@ mvn clean install
 ```
 
 To build the library for a different version of TensorFlow, e.g., 1.4.0, use:
+
 ```sh
 # Build TensorFlow Hadoop
 cd ../../hadoop
@@ -57,8 +58,8 @@ After installation (or deployment), the package can be used with the following d
     ```xml
     <dependency>
       <groupId>org.tensorflow</groupId>
-      <artifactId>spark-tensorflow-connector_2.11</artifactId>
-      <version>1.10.0</version>
+      <artifactId>spark-tensorflow-connector_2.12</artifactId>
+      <version>1.4.0</version>
     </dependency>
     ```
 
@@ -66,7 +67,7 @@ After installation (or deployment), the package can be used with the following d
 Run this library in Spark using the `--jars` command line option in `spark-shell`, `pyspark` or `spark-submit`. For example:
 
 ```sh
-$SPARK_HOME/bin/spark-shell --jars target/spark-tensorflow-connector_2.11-1.10.0.jar
+$SPARK_HOME/bin/spark-shell --jars target/spark-tensorflow-connector_2.12-1.4.0.jar
 ```
 
 ## Features
@@ -299,6 +300,6 @@ val importedDf2: DataFrame = spark.read.format("tfrecords").option("recordType",
 importedDf2.show()
 ```
 
-#### others 
+#### Others 
 
 - https://stackoverflow.com/questions/63761156/error-with-saving-dataframe-to-tfrecords-in-spark
